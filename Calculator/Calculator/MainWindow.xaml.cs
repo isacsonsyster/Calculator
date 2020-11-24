@@ -24,5 +24,32 @@ namespace Calculator
         {
             InitializeComponent();
         }
+
+
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button knapp)
+            {
+                switch (knapp.Content)
+                {
+                    case "0":
+                    case "1":
+                    case "2":
+                    case "3":
+                    case "4":
+                    case "5":
+                    case "6":
+                    case "7":
+                    case "8":
+                    case "9":
+                        FieldForNumbers.Text += knapp.Content;
+                        break;
+                }
+
+
+
+            }
+        }
     }
 }
