@@ -49,6 +49,8 @@ namespace Calculator
                     case "x":
                     case "/":
                     case "=":
+                    case "AC":
+                        FieldForNumbers.Clear();
 
 
 
