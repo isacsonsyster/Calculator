@@ -78,33 +78,45 @@ namespace Calculator
               {
             var numArray = FieldForNumbers.Text.Split('+', '-', 'x', '/');
 
-            var num1 = Convert.ToDouble(numArray[0]);
-            var num2 = Convert.ToDouble(numArray[1]);
-
-            if (FieldForNumbers.Text.Contains('+'))
+            if (numArray.Length != 1) // Check if the input fields have two numbers if not it clears the field
             {
-                var result = num1 + num2;
-                FieldForNumbers.Text = result.ToString();
-                
+                var num1 = Convert.ToDouble(numArray[0]);
+                var num2 = Convert.ToDouble(numArray[1]);
+
+
+
+
+                if (FieldForNumbers.Text.Contains('+'))
+                {
+                    var result = num1 + num2;
+                    FieldForNumbers.Text = result.ToString();
+
+                }
+
+                else if (FieldForNumbers.Text.Contains('-'))
+                {
+                    var result = num1 - num2;
+                    FieldForNumbers.Text = result.ToString();
+                }
+
+                else if (FieldForNumbers.Text.Contains('x'))
+                {
+                    var result = num1 * num2;
+                    FieldForNumbers.Text = result.ToString();
+                }
+
+                else if (FieldForNumbers.Text.Contains('/'))
+                {
+                    var result = num1 / num2;
+                    FieldForNumbers.Text = result.ToString();
+                }
+            }
+            else
+            {
+                FieldForNumbers.Text = String.Empty;
             }
 
-            else if (FieldForNumbers.Text.Contains('-'))
-            {
-                var result = num1 - num2;
-                FieldForNumbers.Text = result.ToString();
-            }
-
-            else if (FieldForNumbers.Text.Contains('x'))
-            {
-                var result = num1 * num2;
-                FieldForNumbers.Text = result.ToString();
-            }
-
-            else if (FieldForNumbers.Text.Contains('/'))
-            {
-                var result = num1/num2;
-                FieldForNumbers.Text = result.ToString();
-            }
+            
 
         }
         /* The method calculate 1 percentage of the number the player has written, and write the percentage out
@@ -119,6 +131,8 @@ namespace Calculator
 
 
         }
+
+
     }
     }
 
