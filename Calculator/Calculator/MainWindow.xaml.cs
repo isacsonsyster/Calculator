@@ -44,24 +44,39 @@ namespace Calculator
                     case "8":
                     case "9":
                     case ",":
-                    case "+":
+                    case "+": 
                     case "-":
                     case "x":
                     case "/":
-                    case "=":
-                    case "AC":
-                        FieldForNumbers.Clear();
-
-
-
-
+                    
                         FieldForNumbers.Text += knapp.Content;
                         break;
+                    case "=":
+                        CalculateNumbers();
+                        break;
+
+                    case "AC":
+                        FieldForNumbers.Text = String.Empty;
+                        break;
+
+                    default:
+                        break;
+
                 }
-
-
-
+                         
+               }
             }
+
+        
+             private void CalculateNumbers()
+              {
+              
+                
+                
+
+                
+
+        }
         }
     }
-}
+
