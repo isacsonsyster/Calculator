@@ -57,11 +57,11 @@ namespace Calculator
                         break;
 
                     case "%":
-                        procentage();
+                        procentage(); 
                         break;
 
                     case "AC":
-                        FieldForNumbers.Text = String.Empty;
+                        FieldForNumbers.Text = String.Empty; //clear the field and reset the calculation
                         break;
 
                     default:
@@ -72,7 +72,8 @@ namespace Calculator
                }
             }
 
-        
+        /* The method calculates the addition, subtraction, multiplication and divison, and then write the answer. 
+         */
              private void CalculateNumbers()
               {
             var numArray = FieldForNumbers.Text.Split('+', '-', 'x', '/');
@@ -106,7 +107,8 @@ namespace Calculator
             }
 
         }
-
+        /* The method calculate 1 percentage of the number the player has written, and write the percentage out
+         */
         private void procentage()
         {
             var percent = FieldForNumbers.Text.Split('%');
