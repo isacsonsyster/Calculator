@@ -25,8 +25,6 @@ namespace Calculator
             InitializeComponent();
         }
 
-
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (sender is Button knapp)
@@ -44,20 +42,19 @@ namespace Calculator
                     case "8":
                     case "9":
                     case ",":
-                    case "+": 
+                    case "+":
                     case "-":
                     case "x":
                     case "/":
-                    
                         FieldForNumbers.Text += knapp.Content;
                         break;
+
                     case "=":
-                   
                         CalculateNumbers();
                         break;
 
                     case "%":
-                        procentage(); 
+                        procentage();
                         break;
 
                     case "AC":
@@ -66,31 +63,25 @@ namespace Calculator
 
                     default:
                         break;
-
                 }
-                         
-               }
             }
+        }
 
         /* The method calculates the addition, subtraction, multiplication and divison, and then write the answer. 
          */
-             private void CalculateNumbers()
-              {
+        private void CalculateNumbers()
+        {
             var numArray = FieldForNumbers.Text.Split('+', '-', 'x', '/');
-
+          
             if (numArray.Length != 1) // Check if the input fields have two numbers if not it clears the field
             {
                 var num1 = Convert.ToDouble(numArray[0]);
                 var num2 = Convert.ToDouble(numArray[1]);
 
-
-
-
                 if (FieldForNumbers.Text.Contains('+'))
                 {
                     var result = num1 + num2;
                     FieldForNumbers.Text = result.ToString();
-
                 }
 
                 else if (FieldForNumbers.Text.Contains('-'))
@@ -111,14 +102,13 @@ namespace Calculator
                     FieldForNumbers.Text = result.ToString();
                 }
             }
+
             else
             {
                 FieldForNumbers.Text = String.Empty;
             }
-
-            
-
         }
+
         /* The method calculate 1 percentage of the number the player has written, and write the percentage out
          */
         private void procentage()
@@ -128,11 +118,7 @@ namespace Calculator
 
             var result = number / 100;
             FieldForNumbers.Text = result.ToString();
-
-
         }
-
-
     }
-    }
+}
 
