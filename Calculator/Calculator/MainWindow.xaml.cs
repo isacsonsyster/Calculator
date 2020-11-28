@@ -52,7 +52,12 @@ namespace Calculator
                         FieldForNumbers.Text += knapp.Content;
                         break;
                     case "=":
+                   
                         CalculateNumbers();
+                        break;
+
+                    case "%":
+                        procentage();
                         break;
 
                     case "AC":
@@ -70,13 +75,48 @@ namespace Calculator
         
              private void CalculateNumbers()
               {
-              
-                
-                
+            var numArray = FieldForNumbers.Text.Split('+', '-', 'x', '/');
 
+            var num1 = Convert.ToDouble(numArray[0]);
+            var num2 = Convert.ToDouble(numArray[1]);
+
+            if (FieldForNumbers.Text.Contains('+'))
+            {
+                var result = num1 + num2;
+                FieldForNumbers.Text = result.ToString();
                 
+            }
+
+            else if (FieldForNumbers.Text.Contains('-'))
+            {
+                var result = num1 - num2;
+                FieldForNumbers.Text = result.ToString();
+            }
+
+            else if (FieldForNumbers.Text.Contains('x'))
+            {
+                var result = num1 * num2;
+                FieldForNumbers.Text = result.ToString();
+            }
+
+            else if (FieldForNumbers.Text.Contains('/'))
+            {
+                var result = num1/num2;
+                FieldForNumbers.Text = result.ToString();
+            }
 
         }
+
+        private void procentage()
+        {
+            var percent = FieldForNumbers.Text.Split('%');
+            var number = Convert.ToDouble(percent[0]);
+
+            var result = number / 100;
+            FieldForNumbers.Text = result.ToString();
+
+
         }
+    }
     }
 
